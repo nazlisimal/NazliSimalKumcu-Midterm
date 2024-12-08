@@ -1,0 +1,105 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        //Nazlı Şimal Kumcu 2305041049
+        Console.Write("What is your name? ");
+        string isim = Console.ReadLine();
+
+        Console.WriteLine($"\nHello, {isim}! Welcome to the music quiz game.");
+
+        Console.WriteLine($"\n{isim}, I'll ask some questions, let's have fun!");
+
+        string soruA;
+        do
+        {
+            Console.Write($"\n{isim}, what is your favorite type of music? (r for rock, p for pop, c for classical): ");
+            soruA = Console.ReadLine().ToLower();
+        } while (soruA != "r" && soruA != "p" && soruA != "c");
+
+        string soruB;
+        do
+        {
+            Console.Write($"{isim}, if you could play an instrument, which would it be? (g for guitar, p for piano, d for drums): ");
+            soruB = Console.ReadLine().ToLower();
+        } while (soruB != "g" && soruB != "p" && soruB != "d");
+
+        string soruC;
+        do
+        {
+            Console.Write($"{isim}, where do you enjoy listening to music the most? (c for concerts, h for at home, r for on the road): ");
+            soruC = Console.ReadLine().ToLower();
+        } while (soruC != "c" && soruC != "h" && soruC != "r");
+
+        string soruD;
+        do
+        {
+            Console.Write($"{isim}, do you prefer music with lyrics or instrumental music? (l for lyrics, i for instrumental): ");
+            soruD = Console.ReadLine().ToLower();
+        } while (soruD != "l" && soruD != "i");
+
+        if (soruA == "r" && soruB == "d")
+        {
+            string soruE;
+            do
+            {
+                Console.Write($"\n{isim}, since you love rock and drums, would you rather join a band or start a solo project? (b for band, s for solo): ");
+                soruE = Console.ReadLine().ToLower();
+            } while (soruE != "b" && soruE != "s");
+
+            if (soruE == "b")
+            {
+                Console.WriteLine("Joining a band sounds like a great way to share your love for music with others!");
+            }
+            else
+            {
+                Console.WriteLine("A solo project could let you express your unique musical style freely!");
+            }
+        }
+        else if (soruA == "c" && soruB == "p")
+        {
+            string soruE;
+            do
+            {
+                Console.Write($"\n{isim}, since you love classical music and piano, would you prefer composing music or performing it? (c for composing, p for performing): ");
+                soruE = Console.ReadLine().ToLower();
+            } while (soruE != "c" && soruE != "p");
+
+            if (soruE == "c")
+            {
+                Console.WriteLine("Composing music lets you create something timeless and magical!");
+            }
+            else
+            {
+                Console.WriteLine("Performing on the piano can captivate an audience and bring joy to many!");
+            }
+        }
+
+        Console.WriteLine("\nThank you for your responses! Here's what I think based on your answers:");
+
+        if (soruA == "r" && soruB == "g")
+        {
+            Console.WriteLine("You have the heart of a rockstar! The guitar is a perfect fit for your energetic personality.");
+        }
+        else if (soruA == "c" && soruB == "p")
+        {
+            Console.WriteLine("You have a refined taste in music, and the piano suits your elegant style.");
+        }
+        else if (soruC == "c" && soruD == "l")
+        {
+            Console.WriteLine("You love the energy of live performances and connecting with meaningful lyrics!");
+        }
+        else if (soruC == "h" && soruD == "i")
+        {
+            Console.WriteLine("You find peace in the comfort of home, enjoying the beauty of instrumental music.");
+        }
+        else
+        {
+            Console.WriteLine("You have a diverse taste in music, making you a true music enthusiast!");
+        }
+
+        Console.WriteLine($"\nThanks for playing the music quiz, {isim}! Keep rocking to your favorite tunes!");
+    }
+}
